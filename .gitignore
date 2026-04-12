@@ -416,3 +416,7 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# API Keys - never commit
+appsettings.json
+appsettings.Development.json
