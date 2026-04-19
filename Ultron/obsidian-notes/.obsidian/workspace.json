@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "8ec2af807396e70e",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab788a3fcc5dac1b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9d0fc1263f298cd",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b7c1fb541456d7e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "1acf723bdd4d686e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7d436243f5bcd145",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9dc5abfd60f412f2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e92ff80ab188e4b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "c9630f3dca3533e4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad0ccee613688166",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "controllerbase.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for controllerbase"
+            }
+          },
+          {
+            "id": "a12f1fcd9a48a078",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "controllerbase.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from controllerbase"
+            }
+          },
+          {
+            "id": "baf98f77e6dd910c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "55884d6bc07b3161",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f0d7202e89cbda7e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "controllerbase.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of controllerbase"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e9d0fc1263f298cd",
+  "lastOpenFiles": [
+    "claudeservice_ultron_api_services.md",
+    "Untitled.base",
+    "controllerbase.md",
+    "claudeservice_claudeservice_chatasync.md",
+    "claudeservice_claudeservice.md",
+    "newsservice_newsservice.md",
+    "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs.md",
+    "main_createwindow.md",
+    "d_project_ultron_ultron_ultron_client_main_js.md",
+    "newsservice_newsservice_gettopheadlinesasync.md",
+    "newsservice_ultron_api_services.md",
+    "d_project_ultron_ultron_ultron_api_services_newsservice_cs.md",
+    "d_project_ultron_ultron_ultron_api_services_claudeservice_cs.md",
+    "ultroncontroller_chatrequest.md",
+    "ultroncontroller_ultroncontroller_reset.md",
+    "ultroncontroller_ultroncontroller_chat.md",
+    "ultroncontroller_ultroncontroller.md",
+    "ultroncontroller_ultron_api_controllers.md",
+    "d_project_ultron_ultron_ultron_api_program_cs.md"
+  ]
+}

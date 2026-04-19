@@ -1,0 +1,352 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Program.cs",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Program.cs",
+      "source_location": "L1",
+      "id": "d_project_ultron_ultron_ultron_api_program_cs",
+      "community": 5,
+      "norm_label": "program.cs"
+    },
+    {
+      "label": "UltronController.cs",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L1",
+      "id": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "community": 2,
+      "norm_label": "ultroncontroller.cs"
+    },
+    {
+      "label": "Ultron.API.Controllers",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L4",
+      "id": "ultroncontroller_ultron_api_controllers",
+      "community": 2,
+      "norm_label": "ultron.api.controllers"
+    },
+    {
+      "label": "UltronController",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L6",
+      "id": "ultroncontroller_ultroncontroller",
+      "community": 3,
+      "norm_label": "ultroncontroller"
+    },
+    {
+      "label": "ControllerBase",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "controllerbase",
+      "community": 3,
+      "norm_label": "controllerbase"
+    },
+    {
+      "label": ".Chat()",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L20",
+      "id": "ultroncontroller_ultroncontroller_chat",
+      "community": 0,
+      "norm_label": ".chat()"
+    },
+    {
+      "label": ".Reset()",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L65",
+      "id": "ultroncontroller_ultroncontroller_reset",
+      "community": 3,
+      "norm_label": ".reset()"
+    },
+    {
+      "label": "ChatRequest",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L73",
+      "id": "ultroncontroller_chatrequest",
+      "community": 2,
+      "norm_label": "chatrequest"
+    },
+    {
+      "label": "ClaudeService.cs",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L1",
+      "id": "d_project_ultron_ultron_ultron_api_services_claudeservice_cs",
+      "community": 1,
+      "norm_label": "claudeservice.cs"
+    },
+    {
+      "label": "Ultron.API.Services",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L5",
+      "id": "claudeservice_ultron_api_services",
+      "community": 1,
+      "norm_label": "ultron.api.services"
+    },
+    {
+      "label": "ClaudeService",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L7",
+      "id": "claudeservice_claudeservice",
+      "community": 1,
+      "norm_label": "claudeservice"
+    },
+    {
+      "label": ".ChatAsync()",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L87",
+      "id": "claudeservice_claudeservice_chatasync",
+      "community": 1,
+      "norm_label": ".chatasync()"
+    },
+    {
+      "label": "NewsService.cs",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L1",
+      "id": "d_project_ultron_ultron_ultron_api_services_newsservice_cs",
+      "community": 0,
+      "norm_label": "newsservice.cs"
+    },
+    {
+      "label": "Ultron.API.Services",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L3",
+      "id": "newsservice_ultron_api_services",
+      "community": 0,
+      "norm_label": "ultron.api.services"
+    },
+    {
+      "label": "NewsService",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L5",
+      "id": "newsservice_newsservice",
+      "community": 0,
+      "norm_label": "newsservice"
+    },
+    {
+      "label": ".GetTopHeadlinesAsync()",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L19",
+      "id": "newsservice_newsservice_gettopheadlinesasync",
+      "community": 0,
+      "norm_label": ".gettopheadlinesasync()"
+    },
+    {
+      "label": "main.js",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.Client\\main.js",
+      "source_location": "L1",
+      "id": "d_project_ultron_ultron_ultron_client_main_js",
+      "community": 4,
+      "norm_label": "main.js"
+    },
+    {
+      "label": "createWindow()",
+      "file_type": "code",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.Client\\main.js",
+      "source_location": "L4",
+      "id": "main_createwindow",
+      "community": 4,
+      "norm_label": "createwindow()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "_tgt": "ultroncontroller_ultron_api_controllers",
+      "source": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "target": "ultroncontroller_ultron_api_controllers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "_tgt": "ultroncontroller_ultroncontroller",
+      "source": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "target": "ultroncontroller_ultroncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "_tgt": "ultroncontroller_chatrequest",
+      "source": "d_project_ultron_ultron_ultron_api_controllers_ultroncontroller_cs",
+      "target": "ultroncontroller_chatrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "ultroncontroller_ultroncontroller",
+      "_tgt": "controllerbase",
+      "source": "ultroncontroller_ultroncontroller",
+      "target": "controllerbase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "ultroncontroller_ultroncontroller",
+      "_tgt": "ultroncontroller_ultroncontroller_chat",
+      "source": "ultroncontroller_ultroncontroller",
+      "target": "ultroncontroller_ultroncontroller_chat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "ultroncontroller_ultroncontroller",
+      "_tgt": "ultroncontroller_ultroncontroller_reset",
+      "source": "ultroncontroller_ultroncontroller",
+      "target": "ultroncontroller_ultroncontroller_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "ultroncontroller_ultroncontroller_chat",
+      "_tgt": "newsservice_newsservice_gettopheadlinesasync",
+      "source": "ultroncontroller_ultroncontroller_chat",
+      "target": "newsservice_newsservice_gettopheadlinesasync"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Controllers\\UltronController.cs",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "ultroncontroller_ultroncontroller_chat",
+      "_tgt": "claudeservice_claudeservice_chatasync",
+      "source": "ultroncontroller_ultroncontroller_chat",
+      "target": "claudeservice_claudeservice_chatasync"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_services_claudeservice_cs",
+      "_tgt": "claudeservice_ultron_api_services",
+      "source": "d_project_ultron_ultron_ultron_api_services_claudeservice_cs",
+      "target": "claudeservice_ultron_api_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_services_claudeservice_cs",
+      "_tgt": "claudeservice_claudeservice",
+      "source": "d_project_ultron_ultron_ultron_api_services_claudeservice_cs",
+      "target": "claudeservice_claudeservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\ClaudeService.cs",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "claudeservice_claudeservice",
+      "_tgt": "claudeservice_claudeservice_chatasync",
+      "source": "claudeservice_claudeservice",
+      "target": "claudeservice_claudeservice_chatasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_services_newsservice_cs",
+      "_tgt": "newsservice_ultron_api_services",
+      "source": "d_project_ultron_ultron_ultron_api_services_newsservice_cs",
+      "target": "newsservice_ultron_api_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_api_services_newsservice_cs",
+      "_tgt": "newsservice_newsservice",
+      "source": "d_project_ultron_ultron_ultron_api_services_newsservice_cs",
+      "target": "newsservice_newsservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.API\\Services\\NewsService.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "newsservice_newsservice",
+      "_tgt": "newsservice_newsservice_gettopheadlinesasync",
+      "source": "newsservice_newsservice",
+      "target": "newsservice_newsservice_gettopheadlinesasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Project Ultron\\Ultron\\Ultron.Client\\main.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "d_project_ultron_ultron_ultron_client_main_js",
+      "_tgt": "main_createwindow",
+      "source": "d_project_ultron_ultron_ultron_client_main_js",
+      "target": "main_createwindow",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
