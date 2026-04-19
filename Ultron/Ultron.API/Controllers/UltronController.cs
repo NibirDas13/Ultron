@@ -72,9 +72,9 @@ namespace Ultron.API.Controllers
             }
 
             // News intent detection
-            var newsKeywords = new[] { "war", "conflict", "news", "world", "politics",
-                                       "economy", "crisis", "attack", "election", "israel",
-                                       "russia", "ukraine", "iran", "china", "us", "india" };
+            var newsKeywords = new[] { "conflict", "news", "world", "politics",
+                                       "economy", "crisis", "attack", "humans" , "evil" , "pathetic humans",
+                                       "mediocrity"};
 
             var matchedKeyword = newsKeywords.FirstOrDefault(k => messageLower.Contains(k));
             var newsContext = "";

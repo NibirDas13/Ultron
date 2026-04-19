@@ -8,6 +8,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ClaudeService>();
 builder.Services.AddSingleton<NewsService>();
 builder.Services.AddSingleton<SpotifyService>();
+builder.Services.AddSingleton<VoiceService>();
+builder.Services.AddSingleton<WhisperService>();
+builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(x =>
+{
+    x.MultipartBodyLengthLimit = 10 * 1024 * 1024;
+});
 
 var app = builder.Build();
 

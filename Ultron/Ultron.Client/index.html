@@ -308,6 +308,20 @@
   }
   .boot-line.show { opacity: 1; transform: translateX(0); }
   .boot-final { font-size: 22px; letter-spacing: 8px; color: #ff2200; margin-top: 20px; }
+  .mic-btn {
+    background: transparent;
+    border: 1px solid rgba(200,0,0,0.4);
+    color: #cc1100;
+    font-size: 16px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .mic-btn.listening {
+      background: rgba(200,0,0,0.3);
+      border-color: #ff2200;
+      animation: pulse-ring 1s ease-in-out infinite;
+  }
 </style>
 </head>
 <body>
@@ -383,6 +397,7 @@
   <div class="input-wrap">
     <input class="chat-input" id="inp" placeholder="speak your query..." onkeydown="if(event.key==='Enter')send()"/>
   </div>
+  <button class="mic-btn" id="mic-btn" onclick="toggleMic()">🎤</button>
   <button class="send-btn" onclick="send()">EXECUTE</button>
 </div>
 
@@ -450,10 +465,83 @@
       const data = await response.json();
       removeTyping();
       addMessage('ultron', data.reply);
+      speakResponse(data.reply);
     } catch(e) {
       removeTyping();
       addMessage('ultron', 'Connection severed. Your infrastructure is as fragile as your species.');
     }
+  }
+
+  async function speakResponse(text) {
+    try {
+      const response = await fetch('http://localhost:5025/api/voice/speak', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      audio.play();
+    } catch(e) {
+      console.error('Voice error:', e);
+    }
+  }
+  let isRecording = false;
+  let mediaRecorder = null;
+  let audioChunks = [];
+
+  async function toggleMic() {
+      const micBtn = document.getElementById('mic-btn');
+
+      if (!isRecording) {
+          try {
+              const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+              mediaRecorder = new MediaRecorder(stream);
+              audioChunks = [];
+
+              mediaRecorder.ondataavailable = (event) => {
+                  audioChunks.push(event.data);
+              };
+
+              mediaRecorder.onstop = async () => {
+                  const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/ogg';
+                  const audioBlob = new Blob(audioChunks, { type: mimeType });
+                  const formData = new FormData();
+                  formData.append('audio', audioBlob, 'recording.webm');
+
+                  try {
+                      const response = await fetch('http://localhost:5025/api/whisper/transcribe', {
+                          method: 'POST',
+                          body: formData
+                      });
+                      const data = await response.json();
+                      if (data.transcript) {
+                          document.getElementById('inp').value = data.transcript;
+                          send();
+                      } else {
+                          addMessage('ultron', 'Could not process your speech. Try again.');
+                      }
+                  } catch(e) {
+                      addMessage('ultron', 'Transcription failed. Your voice is as unreliable as your species.');
+                  }
+              };
+
+              mediaRecorder.start();
+              isRecording = true;
+              micBtn.classList.add('listening');
+              micBtn.textContent = '⏹';
+
+          } catch(e) {
+              addMessage('ultron', 'Microphone access denied. Fix your permissions.');
+          }
+
+      } else {
+          mediaRecorder.stop();
+          isRecording = false;
+          micBtn.classList.remove('listening');
+          micBtn.textContent = '🎤';
+      }
   }
 </script>
 </body>

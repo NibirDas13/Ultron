@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require('electron')
 
+app.commandLine.appendSwitch('enable-speech-dispatcher')
+app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required')
+
 function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
@@ -7,9 +10,10 @@ function createWindow() {
     backgroundColor: '#000000',
     frame: false,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      webSecurity: false
+        nodeIntegration: true,
+        contextIsolation: false,
+        webSecurity: false,
+        experimentalFeatures: true
     }
   })
 
