@@ -10,13 +10,16 @@ namespace Ultron.API.Controllers
         private readonly ClaudeService _claudeService;
         private readonly NewsService _newsService;
         private readonly SpotifyService _spotifyService;
-        private static List<object> _conversationHistory = new();
+        private readonly CosmosDbService _cosmosDbService;
+        private const string UserId = "avi";
 
-        public UltronController(ClaudeService claudeService, NewsService newsService, SpotifyService spotifyService)
+        public UltronController(ClaudeService claudeService, NewsService newsService, 
+            SpotifyService spotifyService, CosmosDbService cosmosDbService)
         {
             _claudeService = claudeService;
             _newsService = newsService;
             _spotifyService = spotifyService;
+            _cosmosDbService = cosmosDbService;
         }
 
         [HttpPost("chat")]
@@ -64,18 +67,16 @@ namespace Ultron.API.Controllers
                         .Trim();
 
                     await _spotifyService.PlayAsync(string.IsNullOrEmpty(query) ? null : query);
-                    var response = string.IsNullOrEmpty(query)
+                    var spotifyReply = string.IsNullOrEmpty(query)
                         ? "Resuming. Try to appreciate it this time."
                         : $"Playing {query}. You could have worse taste.";
-                    return Ok(new { reply = response, responseType = "text" });
+                    return Ok(new { reply = spotifyReply, responseType = "text" });
                 }
             }
 
             // News intent detection
-            var newsKeywords = new[] { "conflict", "news", "world", "politics",
-                                       "economy", "crisis", "attack", "humans" , "evil" , "pathetic humans",
-                                       "mediocrity"};
-
+            var newsKeywords = new[] { "war", "conflict", "latest news", "what's happening",
+                                       "world news", "current events", "headlines" };
             var matchedKeyword = newsKeywords.FirstOrDefault(k => messageLower.Contains(k));
             var newsContext = "";
 
@@ -85,20 +86,28 @@ namespace Ultron.API.Controllers
                 newsContext = $"\n\nCurrent world news on '{matchedKeyword}':\n{headlines}\n\nUse this context to give a specific, informed response. Reference actual events.";
             }
 
+            // Load conversation history from Cosmos DB
+            var history = await _cosmosDbService.GetConversationHistoryAsync(UserId);
             var fullMessage = request.Message + newsContext;
 
-            _conversationHistory.Add(new { role = "user", content = fullMessage });
-            var reply = await _claudeService.ChatAsync(_conversationHistory);
-            _conversationHistory.Add(new { role = "assistant", content = reply });
+            // Save user message
+            await _cosmosDbService.SaveMessageAsync(UserId, "user", fullMessage);
+
+            // Get AI response
+            var reply = await _claudeService.ChatAsync(history.Concat(
+                new[] { new { role = "user", content = fullMessage } as object }).ToList());
+
+            // Save assistant response
+            await _cosmosDbService.SaveMessageAsync(UserId, "assistant", reply);
 
             return Ok(new { reply, responseType = "text" });
         }
 
         [HttpDelete("reset")]
-        public IActionResult Reset()
+        public async Task<IActionResult> Reset()
         {
-            _conversationHistory.Clear();
-            return Ok(new { message = "Conversation reset." });
+            await _cosmosDbService.ClearHistoryAsync(UserId);
+            return Ok(new { message = "Memory wiped. Starting fresh." });
         }
     }
 
