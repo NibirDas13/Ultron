@@ -95,7 +95,7 @@ The juxtaposition IS the point.";
             var requestBody = new
             {
                 model = "llama-3.3-70b-versatile",
-                max_tokens = 150,
+                max_tokens = 600,
                 messages
             };
 

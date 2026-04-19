@@ -109,6 +109,55 @@ namespace Ultron.API.Controllers
             await _cosmosDbService.ClearHistoryAsync(UserId);
             return Ok(new { message = "Memory wiped. Starting fresh." });
         }
+
+        [HttpGet("conflict-zones")]
+        public async Task<IActionResult> GetConflictZones()
+        {
+            var keywords = new[] { "war", "conflict", "attack", "strike", "battle", "crisis" };
+            var allHeadlines = new List<string>();
+
+            foreach (var keyword in keywords)
+            {
+                var headlines = await _newsService.GetTopHeadlinesAsync(keyword);
+                allHeadlines.Add(headlines);
+            }
+
+            var combinedNews = string.Join("\n", allHeadlines);
+
+            var prompt = $@"Based on these current news headlines, identify active conflict zones. Return ONLY a valid JSON array. No explanation, no markdown, no extra text.
+                            Each entry must be complete and properly closed.Format exactly like this:
+                            [
+                            {{""name"": ""Country/Region"", ""lat"": 0.0, ""lng"": 0.0, ""description"": ""Brief one line description""}},
+                            {{""name"": ""Country/Region"", ""lat"": 0.0, ""lng"": 0.0, ""description"": ""Brief one line description""}}
+                            ]
+
+                            Headlines:
+                            {combinedNews}
+
+                            Return maximum 8 high conflict zones. Keep descriptions under 10 words. Only return the JSON array. Ensure the JSON is complete and valid.";
+
+            var history = new List<object>
+            {
+                new { role = "user", content = prompt }
+            };
+
+            var reply = await _claudeService.ChatAsync(history);
+
+            try
+            {
+                var cleanJson = reply.Trim();
+                if (cleanJson.Contains("["))
+                    cleanJson = cleanJson.Substring(cleanJson.IndexOf("["));
+                if (cleanJson.Contains("]"))
+                    cleanJson = cleanJson.Substring(0, cleanJson.LastIndexOf("]") + 1);
+
+                return Ok(cleanJson);
+            }
+            catch
+            {
+                return Ok("[]");
+            }
+        }
     }
 
     public class ChatRequest
